@@ -1,11 +1,11 @@
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import * as React from "react";
-import Layout from "../components/layout";
+import Card from '@mui/material/Card'
+import CardActionArea from '@mui/material/CardActionArea'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import * as React from 'react'
+import Layout from '../components/layout'
 
 export default function Home() {
   return (
@@ -70,5 +70,5 @@ export default function Home() {
         </Grid>
       </Grid>
     </Layout>
-  );
+  )
 }

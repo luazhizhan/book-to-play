@@ -4,15 +4,20 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
+import { useRouter } from 'next/router'
 import * as React from 'react'
 import Layout from '../components/layout'
-
 export default function Home() {
+  const router = useRouter()
+  const onCardClick = (id) => {
+    router.push(`/facilities/${id}`)
+  }
+
   return (
     <Layout>
       <Grid container spacing={1} padding="0.5rem">
         <Grid item xs={6}>
-          <Card>
+          <Card onClick={() => onCardClick(1)}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -31,7 +36,7 @@ export default function Home() {
           </Card>
         </Grid>
         <Grid item xs={6}>
-          <Card>
+          <Card onClick={() => onCardClick(2)}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -50,7 +55,7 @@ export default function Home() {
           </Card>
         </Grid>
         <Grid item xs={6}>
-          <Card>
+          <Card onClick={() => onCardClick(3)}>
             <CardActionArea>
               <CardMedia
                 component="img"

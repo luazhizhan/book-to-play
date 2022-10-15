@@ -1,16 +1,37 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import BookmarkIcon from '@mui/icons-material/Bookmark'
 import SportsTennisIcon from '@mui/icons-material/SportsTennis'
 import AppBar from '@mui/material/AppBar'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
 import Paper from '@mui/material/Paper'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+
+function BackIcon(props) {
+  const router = useRouter()
+  const { path } = props
+
+  return (
+    <IconButton
+      onClick={() => {
+        router.push(path)
+      }}
+      size="large"
+      edge="start"
+      color="inherit"
+      aria-label="back"
+    >
+      <ArrowBackIcon />
+    </IconButton>
+  )
+}
 
 export default function Layout(props) {
   const router = useRouter()
@@ -24,7 +45,7 @@ export default function Layout(props) {
       return 2
     }
   })
-  const { children } = props
+  const { children, backPath } = props
 
   return (
     <>
@@ -34,6 +55,7 @@ export default function Layout(props) {
       <Box>
         <AppBar position="static">
           <Toolbar>
+            {backPath && <BackIcon path={backPath} />}
             <Typography
               variant="h1"
               fontSize={22}

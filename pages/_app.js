@@ -1,5 +1,7 @@
 import { ThemeProvider } from '@emotion/react'
 import { createTheme } from '@mui/material/styles'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -21,7 +23,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <Component {...pageProps} />
+      </LocalizationProvider>
     </ThemeProvider>
   )
 }

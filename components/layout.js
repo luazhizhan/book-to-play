@@ -1,6 +1,5 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import BookmarkIcon from '@mui/icons-material/Bookmark'
+import BookmarksIcon from '@mui/icons-material/Bookmarks'
 import SportsTennisIcon from '@mui/icons-material/SportsTennis'
 import AppBar from '@mui/material/AppBar'
 import BottomNavigation from '@mui/material/BottomNavigation'
@@ -45,12 +44,13 @@ export default function Layout(props) {
       return 2
     }
   })
-  const { children, backPath } = props
-
+  const { children, backPath, title } = props
+  const appTitle = title ? title : 'BTP'
   return (
     <>
       <Head>
-        <title>{`Sports On - Just be active`}</title>
+        <title>{`BTP - Book to Play`}</title>
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Box>
         <AppBar position="static">
@@ -62,7 +62,7 @@ export default function Layout(props) {
               fontWeight={700}
               component="div"
             >
-              Sports on
+              {appTitle}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -96,11 +96,11 @@ export default function Layout(props) {
               label="Facilities"
               icon={<SportsTennisIcon />}
             />
-            <BottomNavigationAction label="Bookings" icon={<BookmarkIcon />} />
-            <BottomNavigationAction
+            <BottomNavigationAction label="Bookings" icon={<BookmarksIcon />} />
+            {/* <BottomNavigationAction
               label="Profile"
               icon={<AccountCircleIcon />}
-            />
+            /> */}
           </BottomNavigation>
         </Paper>
       </Box>

@@ -1,0 +1,11 @@
+.container {
+  padding: 0.3rem;
+  overflow: scroll;
+}
+
+.container > img {
+  max-width: 400px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}

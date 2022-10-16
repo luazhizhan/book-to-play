@@ -72,7 +72,7 @@ export default function Bookings() {
       case '3':
         return 'Table Tennis - Hougang'
       default:
-        return 'Sports On'
+        return 'Book To Play'
     }
   })()
 

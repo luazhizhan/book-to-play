@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -45,22 +46,24 @@ export default function Layout(props) {
     }
   })
   const { children, backPath, title } = props
-  const appTitle = title ? title : 'BTP'
+  const appTitle = title ? title : 'Book To Play'
   return (
     <>
       <Head>
-        <title>{`BTP - Book to Play`}</title>
+        <title>{`BTP - Book To Play`}</title>
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Box>
         <AppBar position="static">
           <Toolbar>
             {backPath && <BackIcon path={backPath} />}
+            <Image src="/favicon.png" alt="BTP" width="50" height="50" />
             <Typography
               variant="h1"
               fontSize={22}
               fontWeight={700}
               component="div"
+              marginLeft="5px"
             >
               {appTitle}
             </Typography>

@@ -103,7 +103,7 @@ export default function Bookings() {
   })()
 
   return (
-    <Layout backPath="/" title={title}>
+    <Layout backPath="/facilities" title={title}>
       <div className={styles.container}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={imageSrc} width="100%" height="200px" alt="Sports Hall" />
@@ -187,7 +187,10 @@ export default function Bookings() {
           open={snackBarOpen}
           message="You bid have been submitted successfully."
           autoHideDuration={3000}
-          onClose={() => setSnackBarOpen(false)}
+          onClose={() => {
+            setSnackBarOpen(false)
+            router.push('/bookings')
+          }}
           action={
             <IconButton
               size="small"

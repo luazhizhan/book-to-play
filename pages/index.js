@@ -1,79 +1,47 @@
-import Card from '@mui/material/Card'
-import CardActionArea from '@mui/material/CardActionArea'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import Head from 'next/head'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import * as React from 'react'
-import Layout from '../components/layout'
 export default function Home() {
   const router = useRouter()
-  const onCardClick = (id) => {
-    router.push(`/facilities/${id}`)
+  const onClick = () => {
+    router.push(`/facilities`)
   }
 
   return (
-    <Layout>
-      <Grid container spacing={1} padding="0.5rem">
-        <Grid item xs={6}>
-          <Card onClick={() => onCardClick(1)}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="/images/court1.jpg"
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  Badminton
-                </Typography>
-                <Typography color="text.secondary">
-                  Sengkang Sports Hall
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={6}>
-          <Card onClick={() => onCardClick(2)}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="/images/court2.jpg"
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  Badminton
-                </Typography>
-                <Typography color="text.secondary">
-                  Woodlands Sports Hall
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={6}>
-          <Card onClick={() => onCardClick(3)}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image="/images/court3.jpg"
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  Table Tennis
-                </Typography>
-                <Typography color="text.secondary">
-                  Hougang Sports Hall
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-      </Grid>
-    </Layout>
+    <>
+      <Head>
+        <title>{`BTP - Book To Play`}</title>
+        <link rel="shortcut icon" href="/favicon.png" />
+      </Head>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '3rem',
+          height: '100vh',
+          padding: '10rem 2rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image src="/images/login.svg" alt="login" width={250} height={400} />
+        <Typography variant="h5" component="h1">
+          Welcome to <b style={{ color: '#E91E63' }}>BTP - Book To Play</b>
+        </Typography>
+        <Button
+          variant="contained"
+          fullWidth
+          color="error"
+          size="large"
+          onClick={onClick}
+        >
+          Login with Singpass
+        </Button>
+      </Box>
+    </>
   )
 }

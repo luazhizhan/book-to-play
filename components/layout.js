@@ -1,5 +1,6 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import BookmarksIcon from '@mui/icons-material/Bookmarks'
+import LogoutIcon from '@mui/icons-material/Logout'
 import SportsTennisIcon from '@mui/icons-material/SportsTennis'
 import AppBar from '@mui/material/AppBar'
 import BottomNavigation from '@mui/material/BottomNavigation'
@@ -37,12 +38,10 @@ export default function Layout(props) {
   const router = useRouter()
 
   const [value, setValue] = useState(() => {
-    if (router.pathname === '/') {
+    if (router.pathname === '/facilities') {
       return 0
     } else if (router.pathname === '/bookings') {
       return 1
-    } else if (router.pathname === '/profile') {
-      return 2
     }
   })
   const { children, backPath, title } = props
@@ -53,7 +52,7 @@ export default function Layout(props) {
         <title>{`BTP - Book To Play`}</title>
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
-      <Box>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
             {backPath && <BackIcon path={backPath} />}
@@ -67,6 +66,18 @@ export default function Layout(props) {
             >
               {appTitle}
             </Typography>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { md: 'flex' } }}>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="Logout"
+                onClick={() => router.push('/')}
+                color="inherit"
+              >
+                <LogoutIcon />
+              </IconButton>
+            </Box>
           </Toolbar>
         </AppBar>
         {children}
@@ -81,16 +92,13 @@ export default function Layout(props) {
               setValue(newValue)
               switch (newValue) {
                 case 0:
-                  router.push('/')
+                  router.push('/facilities')
                   break
                 case 1:
                   router.push('/bookings')
                   break
-                case 2:
-                  router.push('/profile')
-                  break
                 default:
-                  router.push('/')
+                  router.push('/facilities')
                   break
               }
             }}
@@ -100,10 +108,6 @@ export default function Layout(props) {
               icon={<SportsTennisIcon />}
             />
             <BottomNavigationAction label="Bookings" icon={<BookmarksIcon />} />
-            {/* <BottomNavigationAction
-              label="Profile"
-              icon={<AccountCircleIcon />}
-            /> */}
           </BottomNavigation>
         </Paper>
       </Box>

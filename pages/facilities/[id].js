@@ -13,6 +13,7 @@ import {
   Select,
   Snackbar,
   TextField,
+  Typography,
 } from '@mui/material'
 import MuiAlert from '@mui/material/Alert'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -106,7 +107,6 @@ export default function Bookings() {
     <Layout backPath="/facilities" title={title}>
       <div className={styles.container}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imageSrc} width="100%" height="200px" alt="Sports Hall" />
         <iframe
           title={location}
           height="250"
@@ -115,7 +115,15 @@ export default function Bookings() {
           src={GooleMapEmbedURL(location)}
           allowFullScreen
         />
-
+        <Typography
+          variant="h6"
+          fontSize={17}
+          fontWeight={500}
+          component="h1"
+          marginLeft="5px"
+        >
+          Activity: Badminton
+        </Typography>
         <FormControl fullWidth margin="normal">
           <DatePicker
             label="Date of booking"

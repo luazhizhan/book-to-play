@@ -58,10 +58,10 @@ export default function Layout(props) {
             {backPath && <BackIcon path={backPath} />}
             <Image src="/favicon.png" alt="BTP" width="50" height="50" />
             <Typography
-              variant="h1"
-              fontSize={22}
+              variant="h6"
+              fontSize={16}
               fontWeight={700}
-              component="div"
+              component="h1"
               marginLeft="5px"
             >
               {appTitle}
@@ -80,7 +80,7 @@ export default function Layout(props) {
             </Box>
           </Toolbar>
         </AppBar>
-        {children}
+        <div style={{ marginBottom: '60px' }}>{children}</div>
         <Paper
           sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
           elevation={3}

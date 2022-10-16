@@ -16,39 +16,40 @@ import {
 import { useState } from 'react'
 import Layout from '../components/layout'
 
+const bookingList = [
+  {
+    id: 1,
+    place: 'Badminton - Sengkang Sports Hall',
+    date: '18 Oct 2022 (Tue)',
+    slot: '08:00 - 10:00',
+    confirmation: 'Confirmed',
+  },
+  {
+    id: 2,
+    place: 'Badminton - Sengkang Sports Hall',
+    date: '18 Oct 2022 (Tue)',
+    slot: '10:00 - 11:00',
+    confirmation: 'Rejected',
+  },
+  {
+    id: 3,
+    place: 'Badminton - Sengkang Sports Hall',
+    date: '22 Oct 2022 (Sat)',
+    slot: '12:00 - 11:00',
+    confirmation: 'Confirmed',
+  },
+  {
+    id: 4,
+    place: 'Badminton - Woodlands Sports Hall',
+    date: '31 Oct 2022 (Mon)',
+    slot: '10:00 - 12:00',
+    confirmation: 'Pending',
+  },
+]
 export default function Bookings() {
   const [dialogOpen, setDialogOpen] = useState(0)
 
-  const [bookings, setBookings] = useState([
-    {
-      id: 1,
-      place: 'Badminton - Sengkang Sports Hall',
-      date: '18 Oct 2022 (Tue)',
-      slot: '08:00 - 10:00',
-      confirmation: 'Confirmed',
-    },
-    {
-      id: 2,
-      place: 'Badminton - Sengkang Sports Hall',
-      date: '18 Oct 2022 (Tue)',
-      slot: '10:00 - 11:00',
-      confirmation: 'Rejected',
-    },
-    {
-      id: 3,
-      place: 'Badminton - Sengkang Sports Hall',
-      date: '22 Oct 2022 (Sat)',
-      slot: '12:00 - 11:00',
-      confirmation: 'Confirmed',
-    },
-    {
-      id: 4,
-      place: 'Badminton - Woodlands Sports Hall',
-      date: '30 Oct 2022 (Sun)',
-      slot: '10:00 - 12:00',
-      confirmation: 'Pending',
-    },
-  ])
+  const [bookings, setBookings] = useState(bookingList)
 
   const statusColor = (status) => {
     switch (status) {

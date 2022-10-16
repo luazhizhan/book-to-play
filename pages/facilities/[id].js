@@ -70,7 +70,7 @@ export default function Bookings() {
       case '2':
         return 'Badminton - Woodlands'
       case '3':
-        return 'Table Tennis - Hougang'
+        return 'Badminton - Hougang'
       default:
         return 'Book To Play'
     }
@@ -196,7 +196,10 @@ export default function Bookings() {
               size="small"
               aria-label="close"
               color="inherit"
-              onClick={() => setSnackBarOpen(false)}
+              onClick={() => {
+                setSnackBarOpen(false)
+                router.push('/bookings')
+              }}
             >
               <CloseIcon fontSize="small" />
             </IconButton>

@@ -64,7 +64,7 @@ export default function Home() {
               />
               <CardContent>
                 <Typography variant="h5" component="div">
-                  Table Tennis
+                  Badminton
                 </Typography>
                 <Typography color="text.secondary">
                   Hougang Sports Hall

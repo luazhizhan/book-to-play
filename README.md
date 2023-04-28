@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Book to Play (Btp)
 
-## Getting Started
+Web application for booking sport facilities in a stress free and fair manner.
 
-First, run the development server:
+## About
 
-```bash
-npm start
-# or
-yarn start
-```
+[SIT HackRift](https://sit-hackrift.netlify.app/) is a weekend-long virtual hackathon where students from Singapore Institute of Technology can build products that can positively impact the citizens of Singapore.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Organized in collaboration with Govtech Singapore and the Singapore Institute of Technology, It aims to implore students to channel their creativity, critical thinking, and problem solving skills along with expanding their knowledge and applying what they have learned in school by implementing intelligent solutions to real life problems.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Problem Statement
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+How can we make booking of public sports facilities stress free and prevent profiteering?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+### Main Causes
+1. First Come First Serve (FCFS) system pressures people to 'camp' till midnight for booking slots
+2. There are scalpers selling booked sports facilities for profit
+3. Bots with multiple accounts being used for booking
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Singpass - Prevent multiple accounts
+2. Email Authentication (OTP) - Prevents use of botting to obtain bookings
+3. Balloting System with Priority - Allows for stress free and fair bookings
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tech Stack
+1. Next.js
+2. Material UI (MUI)
+3. Vercel
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Reference
+1. [Pitch Deck](https://github.com/luazhizhan/book-to-play/files/11351230/5GenZ.team43.pdf)
